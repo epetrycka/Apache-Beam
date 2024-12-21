@@ -6,6 +6,7 @@ def parse_and_split(record):
 def filter_accounts(record):
     return record[3] == 'Accounts'
 
+<<<<<<< HEAD
 def parse_and_count(record):
     return (record[1], 1)
 
