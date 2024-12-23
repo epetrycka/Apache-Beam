@@ -20,7 +20,7 @@ with beam.Pipeline() as p1:
     attendance_count = (
         input_collection
         | 'Filter Accounts' >> beam.Filter(filter_accounts)
-        | 'Map (ID, 1)' >> beam.Map(parse_and_count)
+        | 'Map (name, 1)' >> beam.Map(parse_and_count)
         | beam.CombinePerKey(sum)
         | beam.Map(lambda employee_count: str(employee_count))
         | beam.io.WriteToText('data/output')
